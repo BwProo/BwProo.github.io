@@ -51,11 +51,19 @@ small{display:block;margin-top:34px;font:500 .8rem/1.5 "JetBrains Mono",monospac
   <h1>NoSkillAntiCheat</h1>
   <p>Free, lightweight Minecraft anticheat for Paper, Folia, Purpur, Spigot and Velocity. Movement simulation, combat checks, local AI and Meteor detection.</p>
   <div class="ctas">
-    <a class="btn primary" href="/NoSkillAntiCheat/en/">Open the project</a>
+    <a class="btn primary" id="open" href="/NoSkillAntiCheat/en/">Open the project</a>
     <a class="btn" href="/NoSkillAntiCheat/">Deutsch</a>
     <a class="btn" href="https://github.com/BwProo/NoSkillAntiCheat">GitHub</a>
   </div>
   <small>GPL-3.0 · based on GrimAC · built with Claude</small>
 </main>
+<script>
+/* Same rule as the project site: browser language first, remembered choice wins. */
+(function(){try{var pref=null;try{pref=localStorage.getItem("nsac-lang")}catch(e){}
+var l=((navigator.languages&&navigator.languages[0])||navigator.language||"en").toLowerCase();
+if((pref||(l.indexOf("de")===0?"de":"en"))==="de"){var a=document.getElementById("open");a.href="/NoSkillAntiCheat/";a.textContent="Zum Projekt";
+document.documentElement.lang="de";document.querySelector("p").textContent="Kostenloses, leichtes Minecraft-Anticheat für Paper, Folia, Purpur, Spigot und Velocity. Bewegungs-Simulation, Kampf-Checks, lokale KI und Meteor-Erkennung.";
+var d=document.querySelector('a[href="/NoSkillAntiCheat/"]:not(#open)');if(d){d.href="/NoSkillAntiCheat/en/";d.textContent="English";}}}catch(e){}})();
+</script>
 </body>
 </html>
